@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-7">
+    <h2>All Favorite Teams and filed list</h2>
+    <ul class="list-group">
+      <li class="list-group-item"
+        *ngFor="let team of FavoriteTeams">
+        the filed is: {{team.field}}<br>
+        the team is: {{team.team}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-7">
+    <h2>Get User Profile Data</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        the first Name is: {{profiles.firstName}}<br>
+        the last Name is: {{profiles.lastName}}<br>
+        the Country is: {{profiles.Country}}<br>
+      </li>
+    </ul>
+  </div>
+    <div class="col-md-7">
+    <h2>Get User Favorites By Sport Field</h2>
+    <ul class="list-group">
+      <li class="list-group-item"
+      *ngFor="let favorite of IdAndSport">
+        the filed is: {{favorite.field}}<br>
+        the team is: {{favorite.team}}
+      </li>
+    </ul>
+  </div>
+</div>
