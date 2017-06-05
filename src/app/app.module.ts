@@ -6,17 +6,27 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import {RouterModule}  from '@angular/router';
+import { UserFavoriteComponent } from './users/user-favorite/user-favorite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDetailsComponent,
-    UserListComponent
+    UserListComponent,
+    UserFavoriteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+       {
+         path:'home',
+         component:UserDetailsComponent
+       }
+      
+      ])
   ],
   providers: [],
   bootstrap: [AppComponent]

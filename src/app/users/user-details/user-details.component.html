@@ -1,3 +1,17 @@
-<p>
-  user-details works!
-</p>
+<div class="row">
+  <div class="col-md-7">
+    <h2>Get user Details by Id</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        the first Name is:{{profile.profile.firstName}} <br>
+        the last Name is:{{profile.profile.lastName}} <br>
+        the Country is:{{profile.profile.County}} <br>
+      </li>
+      <li class="list-group-item"
+      *ngFor="let team of profile.favoriteTeams">
+        the filed is: {{team.field}}<br>
+        the team is: {{team.team}}
+      </li>
+    </ul>
+  </div>
+  </div>

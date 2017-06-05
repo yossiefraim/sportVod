@@ -14,10 +14,10 @@ export class UserService {
   
   constructor(private http: Http) { }
 
-  getUserById(id):Promise<Profile>{
-      return this.http.post(this.userUrl+'getUserProfileData',id)
+  getUserById(id):Promise<User>{
+      return this.http.post(this.userUrl+'getUserProfileData/123',id)
                  .toPromise()
-                 .then(response => response.json() as Profile)
+                 .then(response => response.json() as User)
                  .catch(this.handleError);
   }
   getAllFavorites():Promise<FavoriteTeam[]>{
@@ -27,10 +27,10 @@ export class UserService {
                  .catch(this.handleError);
   }
   
-   getUserFavoriteBySportField(params):Promise<FavoriteTeam[]>{
-      return this.http.post(this.userUrl+'getUserFavoriteBySportField',params)
+   getUserFavoriteBySportField(param1,param2):Promise<FavoriteTeam>{
+      return this.http.get(this.userUrl+'getUserFavoriteBySportField/'+param1+'?field='+param2)
                  .toPromise()
-                 .then(response => response.json() as FavoriteTeam[])
+                 .then(response => response.json() as FavoriteTeam)
                  .catch(this.handleError);
   }
 
