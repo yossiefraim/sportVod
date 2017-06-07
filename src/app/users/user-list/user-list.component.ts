@@ -13,6 +13,7 @@ import { UserDetailsComponent } from '../user-details/user-details.component';
   styleUrls: ['./user-list.component.css'],
   providers: [UserService]
 })
+
 export class UserListComponent implements OnInit {
 
     //users:User

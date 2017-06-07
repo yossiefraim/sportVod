@@ -1,0 +1,18 @@
+h2{
+    color:#d8d5d5;
+}
+.list-group-item{
+    background-color: rgba(97, 95, 95, 0.32);
+    color:#d8d5d5;
+    border: 0px;
+    font-size: 18px;
+    font-family: Georgia;
+}
+.list-group-item:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.list-group-item:last-child{
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+}

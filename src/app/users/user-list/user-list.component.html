@@ -1,32 +1,11 @@
-<!-- <div class="row">
-<div class="col-md-7">
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid"> -->
-    <!-- Brand and toggle get grouped for better mobile display -->
-<!--     <div class="navbar-header">
-      <a class="navbar-brand" href="#">SportVod</a>
-    </div> -->
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-<!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">All Favorite Teams and filed list </a></li>
-        <li><a routerLink="/getFavorites">Get User Profile Data</a></li>
-        <li><a href="#">Get User Favorites By Sport Field</a></li>
-      </ul>
-    </div> --><!-- /.navbar-collapse -->
- <!--  </div> --><!-- /.container-fluid -->
-<!-- </nav>
-</div>
-</div> -->
 <div class="row">
   <div class="col-md-7">
     <h2>All Favorite Teams and filed list</h2>
     <ul class="list-group">
       <li class="list-group-item"
         *ngFor="let team of FavoriteTeams">
-        the filed is: {{team.field}}<br>
-        the team is: {{team.team}}
+        The filed is: {{team.field}}<br>
+        The team is: {{team.team}}
       </li>
     </ul>
   </div>
