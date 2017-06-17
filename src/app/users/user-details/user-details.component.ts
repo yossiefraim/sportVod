@@ -17,16 +17,20 @@ export class UserDetailsComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-
-      var data1="";
+     this.getUserService();
       
+  }
+
+ 
+  getUserService(){
+      let data1=""; 
       this.userService
       .getUserById(data1)
       .then((user:User)=>{
           console.log("user id "+user.profile.firstName);
           this.selectProfile(user);
           return user;
-      });
+      });  
   }
 
   selectProfile(profile:User){

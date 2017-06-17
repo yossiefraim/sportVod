@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule} from '@angular/router';
-
+import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UserListComponent } from './users/user-list/user-list.component';
@@ -25,24 +25,8 @@ import { PageNotFoundComponent } from './users/page-not-found/page-not-found.com
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-         {
-           path:'Get-User-Profile-Data',
-           component:UserDetailsComponent
-         },
-         {
-           path:'All-Favorite-Teams-and-filed-list',
-           component:UserListComponent
-         },
-         {
-           path:'Get-User-Favorites-By-Sport-Field',
-           component:UserFavoriteComponent
-         },
-         { path: '**',
-          component: PageNotFoundComponent
-         }
-      ])
-  ],
+    AppRoutingModule
+ ],
   providers: [],
   bootstrap: [AppComponent]
 })

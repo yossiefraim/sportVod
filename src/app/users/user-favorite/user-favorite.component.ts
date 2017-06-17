@@ -18,17 +18,19 @@ export class UserFavoriteComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-
-      var data2="123";
-      var data3="soccer";
-
+    this.getUseFavoriteService();
+      
+  }
+    getUseFavoriteService(){
+      let data2="123";
+      let data3="soccer";
       this.userService
       .getUserFavoriteBySportField(data2,data3)
       .then((IdAndSport:FavoriteTeam)=>{
          this.selectFavorite(IdAndSport);      
          return IdAndSport;
       });
-  }
+    }
     selectFavorite(favorite:FavoriteTeam){
       this.favorite=favorite;
       console.log("favorite team "+this.favorite.team);

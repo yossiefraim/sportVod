@@ -38,15 +38,7 @@ export class UserListComponent implements OnInit {
       // });
       
      
-      this.userService
-      .getAllFavorites()
-      .then((FavoriteTeams:FavoriteTeam[])=>{
-          this.FavoriteTeams=FavoriteTeams.map((favorite)=>{
-                  console.log("favorite"+favorite);
-                 return favorite;
-          });
-      });
-
+      this.getAllFavoriteService();
 
       // this.userService
       // .getUserFavoriteBySportField(data2,data3)
@@ -57,7 +49,16 @@ export class UserListComponent implements OnInit {
       //     });
       // });
   }
-
+  getAllFavoriteService(){
+    this.userService
+      .getAllFavorites()
+      .then((FavoriteTeams:FavoriteTeam[])=>{
+          this.FavoriteTeams=FavoriteTeams.map((favorite)=>{
+                  console.log("favorite"+favorite);
+                 return favorite;
+          });
+      });
+  }
 
   //selectContact(user: User) {
  //   this.selectedUser = user

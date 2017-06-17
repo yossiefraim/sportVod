@@ -1,21 +1,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/All-Favorite-Teams-and-filed-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">SportVod</a>
+      <a class="navbar-brand" href="#">SportVod</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a routerLink="/All-Favorite-Teams-and-filed-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">All Favorite Teams and filed list </a></li>
-        <li><a routerLink="/Get-User-Profile-Data" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">Get User Profile Data</a></li>
-        <li><a routerLink="/Get-User-Favorites-By-Sport-Field" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">Get User Favorites By Sport Field</a></li>
+        <li routerLinkActive="active"><a routerLink="/AllFavoriteTeamsAndFiledList" >All Favorite Teams and filed list </a></li>
+        <li routerLinkActive="active"><a routerLink="/GetUserProfileData" >Get User Profile Data</a></li>
+        <li routerLinkActive="active"><a routerLink="/GetUserFavoritesBySportField">Get User Favorites By Sport Field</a></li>
       </ul>
     </div> 
  </div> 
 </nav>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-        <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
