@@ -1,6 +1,20 @@
 <div class="row">
   <div class="col-md-7">
     <h2>Get user Details by Id</h2>
+     <h4>Select User From The List</h4>
+     <div class="row">
+      <div class="col-md-7">
+        <select class="form-control" #id>
+          <option>123</option>
+          <option>333</option>
+          <option>445</option>
+          <option>555</option>
+        </select>
+      </div>
+      <span class="input-group-btn">
+      <button class="btn btn-primary" type="button" (click)="userIdEvent(id.value)" >Find!</button>
+      </span>
+    </div>
     <ul class="list-group">
       <li class="list-group-item">
         The first Name is: {{profile.profile.firstName}} <br>

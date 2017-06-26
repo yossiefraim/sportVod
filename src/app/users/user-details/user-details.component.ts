@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User} from '../user';
-import { UserService } from '../user.service';
+import { UserService } from '../service/user.service';
 
 
 @Component({
@@ -10,14 +10,14 @@ import { UserService } from '../user.service';
   providers: [UserService]
 })
 export class UserDetailsComponent implements OnInit {
-
+      id:string;
       users:User 
       profile:User
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-     this.getUserService();
+     
       
   }
 
@@ -25,9 +25,8 @@ export class UserDetailsComponent implements OnInit {
   getUserService(){
       let data1=""; 
       this.userService
-      .getUserById(data1)
+      .getUserById(this.id,data1)
       .then((user:User)=>{
-          console.log("user id "+user.profile.firstName);
           this.selectProfile(user);
           return user;
       });  
@@ -35,7 +34,10 @@ export class UserDetailsComponent implements OnInit {
 
   selectProfile(profile:User){
       this.profile=profile;
-      console.log("profile "+profile.profile.County);
+  }
+    userIdEvent(val) {
+    this.id=val;
+    this.getUserService();
   }
 
 }

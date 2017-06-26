@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { User } from './user';
-import { FavoriteTeam } from './favorite-team';
-import { Profile } from './profile';
+import { User } from '../schemes/user';
+import { FavoriteTeam } from '../schemes/favorite-team';
+import { Profile } from '../schemes/profile';
 
 import { Http,Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise'; 
@@ -14,8 +14,8 @@ export class UserService {
   
   constructor(private http: Http) { }
 
-  getUserById(id):Promise<User>{
-      return this.http.post(this.userUrl+'getUserProfileData/123',id)
+  getUserById(id,temp):Promise<User>{
+      return this.http.post(this.userUrl+'getUserProfileData/'+id,temp)
                  .toPromise()
                  .then(response => response.json() as User)
                  .catch(this.handleError);

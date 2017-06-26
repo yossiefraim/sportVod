@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User} from '../user';
 import { FavoriteTeam } from '../favorite-team';
 import { Profile } from '../profile';
-import { UserService } from '../user.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-user-favorite',
@@ -12,20 +12,19 @@ import { UserService } from '../user.service';
 })
 export class UserFavoriteComponent implements OnInit {
 
-    IdAndSport:FavoriteTeam
-    favorite:FavoriteTeam
+    IdAndSport:FavoriteTeam;
+    favorite:FavoriteTeam;
+    id:string;
+    field:string;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.getUseFavoriteService();
-      
+    
   }
     getUseFavoriteService(){
-      let data2="123";
-      let data3="soccer";
       this.userService
-      .getUserFavoriteBySportField(data2,data3)
+      .getUserFavoriteBySportField(this.id,this.field)
       .then((IdAndSport:FavoriteTeam)=>{
          this.selectFavorite(IdAndSport);      
          return IdAndSport;
@@ -33,7 +32,11 @@ export class UserFavoriteComponent implements OnInit {
     }
     selectFavorite(favorite:FavoriteTeam){
       this.favorite=favorite;
-      console.log("favorite team "+this.favorite.team);
+  }
+  favoriteEvent(val){
+    this.id=val.val1;
+    this.field=val.val2;
+    this.getUseFavoriteService();
   }
 
 }

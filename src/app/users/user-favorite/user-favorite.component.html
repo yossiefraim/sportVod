@@ -1,6 +1,28 @@
 <div class="row">
     <div class="col-md-7">
         <h2>Get User Favorites By Sport Field</h2>
+        <h4>Select User From The List</h4>
+        <div class="row">
+          <div class="col-md-7">
+            <select class="form-control" #user>
+              <option>123</option>
+              <option>333</option>
+              <option>445</option>
+              <option>555</option>
+            </select>
+            <h4>Select Field From The List</h4>
+            <select class="form-control" #fil>
+              <option>soccer</option>
+              <option>basketball</option>
+              <option>baseball</option>
+              <option>Football</option>
+              <option>Hockey</option>
+            </select>
+          </div>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" (click)="favoriteEvent({val1:user.value,val2:fil.value})" >Find!</button>
+          </span>
+        </div>
         <ul class="list-group">
             <li class="list-group-item">
             The favorite filed is: {{favorite.field}}<br>
